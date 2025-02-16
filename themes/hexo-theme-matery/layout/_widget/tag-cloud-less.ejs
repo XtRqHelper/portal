@@ -1,0 +1,40 @@
+<%
+var colorArr = ['#F9EBEA', '#F5EEF8', '#D5F5E3', '#E8F8F5', '#FEF9E7',
+    '#F8F9F9', '#82E0AA', '#D7BDE2', '#A3E4D7', '#85C1E9', '#F8C471', '#F9E79F', '#FFF'];
+var colorCount = colorArr.length;
+var hashCode = function (str) {
+    if (!str && str.length === 0) {
+        return 0;
+    }
+
+    var hash = 0;
+    for (var i = 0, len = str.length; i < len; i++) {
+        hash = ((hash << 5) - hash) + str.charCodeAt(i);
+        hash |= 0;
+    }
+    return hash;
+};
+var i = 0;
+var isTag = is_tag();
+%>
+
+<div id="tags-less" class="container chip-container">
+    <div class="card">
+        <div class="card-content">
+            <div class="tag-title center-align">
+                <i class="fas fa-tags"></i>&nbsp;&nbsp;
+                <% site.tags.map(function(tag) { %>
+                <% if (isTag && tag.name == page.tag) { %>
+                <%= __(tag.name) %>
+                <% } %>
+                <% }); %>
+
+            </div>
+            <div class="tag-chips">
+            </div>
+        </div>
+        <% if (theme.auto.enable) { %>
+        <script src="<%- theme.jsDelivr.url %>/js/auto/article.min.js"></script>
+        <% } %>
+    </div>
+</div>

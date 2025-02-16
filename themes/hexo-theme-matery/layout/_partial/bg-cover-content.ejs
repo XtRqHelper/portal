@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                <a class="a_index desc"  target="_blank">
+                <% if (config.subtitle && config.subtitle.length > 0) { %>
+                <%= config.subtitle %>
+                <% } else { %>
+                subtitle
+                <% } %>
+                </a>
+            </div>
+
+            <div class="description center-align">
+                <a class="a_index desc" target="_blank">
+                <% if (theme.subtitle.enable) { %>
+                <span id="subtitle"></span>
+                <script src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js"></script>
+                <script>
+                    var typed = new Typed("#subtitle", {
+                        strings: ['<%= theme.subtitle.sub1 %>','<%= theme.subtitle.sub2 %>'],
+                        startDelay: <%= theme.subtitle.startDelay %>,
+                        typeSpeed: <%= theme.subtitle.typeSpeed %>,
+                        loop: <%= theme.subtitle.loop %>,
+                        backSpeed: <%= theme.subtitle.backSpeed %>,
+                        showCursor: <%= theme.subtitle.showCursor %>
+                    });
+                </script>
+                <% } else { %>
+                <%= config.description %>
+                <% } %>
+                </a>
+            </div>
+            <% if (theme.auto.enable) { %>
+            <script src="<%- theme.jsDelivr.url %>/js/auto/h.min.js"></script>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<% if (theme.banner.enable) { %>
+<script>
+    // 每天切换 banner 图.  Switch banner image every day.
+    $('.bg-cover').css('background-image', 'url(<%- theme.jsDelivr.url %>/medias/banner/' + new Date().getDay() + '.jpg)');
+</script>
+<% } else { %>
+<script>
+    $('.bg-cover').css('background-image', 'url(<%- theme.jsDelivr.url %>/medias/banner/0.jpg)');
+</script>
+<% } %>

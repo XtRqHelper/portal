@@ -1,0 +1,142 @@
+<link rel="stylesheet" type="text/css" href="<%- theme.jsDelivr.url %><%- theme.libs.css.swiper %>">
+<style>
+    .swiper-slide{
+        height: 1800px;
+    }
+</style>
+<%
+// get all cover posts.
+var coverPosts = [];
+site.posts.forEach(function (post) {
+    if (post.cover) {
+        coverPosts.push(post);
+    }
+});
+var coverPostsCount = coverPosts.length;
+%>
+<div class="swiper-container carousel-slider center" style="margin-top: -64px;" id="swiper">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide carousel-item red white-text bg-cover about-cover">
+            <div class="container">
+                <%- partial('_partial/bg-cover-content') %>
+
+                <div class="cover-btns">
+                    <a href="#indexCard" class="waves-effect waves-light btn">
+                        <i class="fa fa-angle-double-down"></i><%- __('startRead') %>
+                    </a>
+
+                    <% if (theme.indexbtn && theme.indexbtn.enable) { %>
+                    <a href="<%- theme.indexbtn.url %>" class="waves-effect waves-light btn" target="_blank">
+                        <i class="<%- theme.indexbtn.icon %>"></i><%- theme.indexbtn.name %>
+                    </a>
+                    <% } else if (theme.githubLink.enable) { %>
+                    <a href="<%- theme.githubLink.url %>" class="waves-effect waves-light btn" target="_blank">
+                        <i class="fab fa-github %>"></i><%- theme.githubLink.title %>
+                    </a>
+                    <% } %>
+                </div>
+                <div class="cover-social-link"><%- partial('_partial/social-link') %></div>
+            </div>
+        </div>
+        <% if (coverPostsCount > 0) { %>
+        <%
+            var hashCode = function (str) {
+                if (!str && str.length === 0) {
+                    return 0;
+                }
+
+                var hash = 0;
+                for (var i = 0, len = str.length; i < len; i++) {
+                    hash = ((hash << 5) - hash) + str.charCodeAt(i);
+                    hash |= 0;
+                }
+                return hash;
+            };
+
+            var featureImages = theme.featureImages;
+            var imgCount = featureImages.length;
+        %>
+
+        <% for (var i = 0; i < coverPostsCount; i++) { %>
+        <%
+            var post = coverPosts[i];
+            var coverImg = post.coverImg ? post.coverImg
+                    : (post.img ? post.img : featureImages[Math.abs(hashCode(post.title) % imgCount)]);
+        %>
+        <div class="swiper-slide carousel-item amber white-text carousel-post bg-cover"
+             style="background-image: url('<%- coverImg %>');">
+            <div class="container">
+                <div class="row">
+                    <div class="col s10 offset-s1">
+                        <div class="title center-align">
+                            <a href="<%- url_for(post.path) %>" class="a_index title" target="_blank">
+                                <%- post.title %>
+                            </a>
+                        </div>
+                        <div class="description center-align">
+                            <a href="<%- url_for(post.path) %>" class="a_index desc" target="_blank">
+                                <% if (post.summary && post.summary.length > 0) { %>
+                                <%- post.summary %>
+                                <% } else { %>
+                                <%- strip_html(post.content).substring(0, 120) %>
+                                <% } %>
+                            </a>
+                        </div>
+                        <div class="cover-btns">
+                            <a href="<%- url_for(post.path) %>" class="waves-effect waves-light btn" target="_blank">
+                                <i class="icon fa fa-eye fa-fw"></i><%- __('readMore') %>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% } %>
+        <% } %>
+    </div>
+    <!-- 如果需要分页器 -->
+    <% if (coverPostsCount > 0 && theme.cover.showIndicators) { %>
+    <div class="swiper-pagination"></div>
+    <% } %>
+    <!-- 如果需要导航按钮 -->
+    <% if (coverPostsCount > 0 && theme.cover.showPrevNext) { %>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <% } %>
+
+</div>
+<script src="<%- theme.jsDelivr.url %><%- theme.libs.js.swiper %>"></script>
+<script>
+    $(document).ready(function () {
+        $(".swiper-slide").css('height', window.innerHeight+10+'px')
+    })
+    $(window).resize(function () {
+        $(".swiper-slide").css('height', window.innerHeight+10+'px')
+    });
+    var mySwiper = new Swiper('.swiper-container', {
+        direction: 'horizontal', // 垂直切换选项
+        height: window.innerHeight +'px',
+        autoplay: false,
+        loop: true, // 循环模式选项
+        // 如果需要分页器
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        // 如果需要前进后退按钮
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        // 如果需要滚动条
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+        speed:Number('<%- theme.cover.duration %>'),
+        <% if (coverPostsCount > 0 && theme.cover.autoLoop) { %>
+        autoplay : {
+            delay:Number('<%- theme.cover.intervalTime %>')
+        },
+        <% } %>
+    })
+
+</script>
