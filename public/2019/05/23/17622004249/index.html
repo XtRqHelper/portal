@@ -1,0 +1,1091 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Angular使用, 博客">
+    <meta name="description" content="记录日常用到的边边角角，悟已往之不谏，知来者之可追">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    
+    <title>Angular使用</title>
+    
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/font-awesome/5.11.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/animate.css/3.5.1/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/lightgallery/1.6.11/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css?t=1739773052543">
+    <link rel="stylesheet" type="text/css" href="/css/my.css?t=1739773052543">
+
+    <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js"></script>
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span"></span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/favicon.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name"></div>
+        <div class="logo-desc">
+            
+            记录日常用到的边边角角，悟已往之不谏，知来者之可追
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://gitee.com/doobo" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #C3A;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://gitee.com/doobo" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="https://cdn.staticfile.org/crypto-js/4.0.0/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <a class="a_index title" target="_blank">
+                    <h1 class="description center-align post-title">Angular使用</h1>
+                    </a>
+                    
+                    <script src="/js/auto/article.h.min.js"></script>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.staticfile.org/tocbot/4.10.1/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/angular/">
+                                <span class="chip bg-color">angular</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                                编程
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-05-23 13:33
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            
+            <script src="/js/auto/article.min.js"></script>
+            
+            <div id="articleContent">
+                <h2 id="初始化环境"><a href="#初始化环境" class="headerlink" title="初始化环境"></a>初始化环境</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @angular/cli     <span class="comment">#安装全局命令行</span></span><br><span class="line">ng new ngapp                    <span class="comment">#生成一个新项目</span></span><br><span class="line">ng serve --open                 <span class="comment">#启动服务器，热刷新</span></span><br><span class="line">ng serve --proxy-config proxy.conf.json --host 0.0.0.0 --disable-host-check --port 4200 --live-reload-port 4201 <span class="comment">#详细设置相关参数</span></span><br><span class="line">ng serve --prod --<span class="built_in">env</span>=dev --proxy-config proxy.conf.json --host 0.0.0.0 --disable-host-check</span><br><span class="line"><span class="comment"># 这是生产构建</span></span><br><span class="line">ng build --target=production --environment=prod</span><br><span class="line">ng build --prod --<span class="built_in">env</span>=prod</span><br><span class="line">ng build --prod</span><br><span class="line"><span class="comment"># 这是开发构建</span></span><br><span class="line">ng build --target=development --environment=dev</span><br><span class="line">ng build --dev --e=dev</span><br><span class="line">ng build --dev</span><br></pre></td></tr></table></figure>
+
+<h2 id="常用开发命令-组件、服务、路由"><a href="#常用开发命令-组件、服务、路由" class="headerlink" title="常用开发命令-组件、服务、路由"></a>常用开发命令-组件、服务、路由</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">ng generate component heroes        <span class="comment">#生成一个heroes组件，CLI 创建了一个新的文件夹 src/app/heroes/</span></span><br><span class="line">ng generate component hero -it      <span class="comment">#取消模板文件,创建内联模块</span></span><br><span class="line">ng g c --inline-template=<span class="literal">true</span> --inline-style=<span class="literal">true</span> tab   <span class="comment">#创建内联模块</span></span><br><span class="line">ng generate service hero            <span class="comment">#创建一个名叫 hero 的服务</span></span><br><span class="line">ng generate service hero --module=app   <span class="comment">#创建服务,并把服务注入App组件中</span></span><br><span class="line">    <span class="comment">#把提供商添加到根模块上，以便在任何地方都使用服务的同一个实例</span></span><br><span class="line">ng generate module app-routing --flat --module=app <span class="comment">#创建路由模块 </span></span><br><span class="line">    <span class="comment">#--flat 把这个文件放进了 src/app 中，而不是单独的目录中</span></span><br><span class="line">    <span class="comment">#--module=app 告诉 CLI 把它注册到 AppModule 的 imports 数组中</span></span><br><span class="line">ng generate class hero              <span class="comment">#创建一个类</span></span><br><span class="line"><span class="comment">#参考地址：https://github.com/angular/angular-cli/wiki/generate-component</span></span><br><span class="line"><span class="comment">#参考地址：https://www.npmjs.com/package/angular-cli-tools?activeTab=readme</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="页面常用指令"><a href="#页面常用指令" class="headerlink" title="页面常用指令"></a>页面常用指令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; hero.name | uppercase &#125;&#125;     <span class="comment">#过滤器，转为大写，lowercase小写</span></span><br><span class="line">&#123;&#123;nullHero?.name&#125;&#125;              <span class="comment">#替换*ngIf检测空，a?.b?.c?.d</span></span><br><span class="line">&#123;&#123;<span class="variable">$any</span>(hero).marker&#125;&#125;           <span class="comment">#&#123;&#123;$any(this).member&#125;&#125;,访问组件中未声明过的成员</span></span><br><span class="line">(click)=<span class="string">&quot;onSelect(hero)&quot;</span>        <span class="comment">#事件绑定方式</span></span><br><span class="line">&lt;a routerLink=<span class="string">&quot;/heroes&quot;</span>&gt;H&lt;/a&gt;   <span class="comment">#路由跳转方式</span></span><br><span class="line">    </span><br><span class="line">[(ngModel)]=<span class="string">&quot;hero.name&quot;</span>         <span class="comment">#input的数据双向绑定</span></span><br><span class="line">    <span class="comment">#这两个的简写[ngModel]=&quot;hero.name&quot; (ngModelChange)=&quot;setUppercaseName($event)&quot;</span></span><br><span class="line">    <span class="comment">#import &#123; FormsModule &#125; from &#x27;@angular/forms&#x27;;imports: [FormsModule]需要导入对应的包</span></span><br><span class="line">[ngClass]=<span class="string">&quot;currentClasses&quot;</span>      <span class="comment">#绑定类样式 currentClasses = &#123;&#x27;special&#x27;:  this.isSpecial&#125;;</span></span><br><span class="line">[class.special]=<span class="string">&quot;isSpecial&quot;</span>     <span class="comment">#单个样式开关</span></span><br><span class="line">[ngStyle]=<span class="string">&quot;currentStyles&quot;</span>       <span class="comment">#绑定style对象&#123;&#x27;font-style&#x27;: this.canSave  ? &#x27;italic&#x27; : &#x27;normal&#x27;&#125;</span></span><br><span class="line">[style.display]=<span class="string">&quot;isSpecial ? &#x27;block&#x27; : &#x27;none&#x27;&quot;</span>  <span class="comment">#简单样式</span></span><br><span class="line">[style.visibility]=<span class="string">&quot;isFirstVote?&#x27;visible&#x27;:&#x27;hidden&#x27;&quot;</span></span><br><span class="line">[innerHTML]=<span class="string">&quot;aa&quot;</span>                <span class="comment">#插入HTML	</span></span><br><span class="line"></span><br><span class="line">*ngFor=<span class="string">&quot;let hero of heroes;let i = index&quot;</span>       <span class="comment">#for循环语句</span></span><br><span class="line">[ngSwitch]=<span class="string">&quot;currentHero.emotion&quot;</span> --&gt; *ngSwitchCase=<span class="string">&quot;&#x27;happy&#x27;&quot;</span> --&gt; *ngSwitchDefault</span><br><span class="line"></span><br><span class="line"><span class="comment">#input事件</span></span><br><span class="line">(focus)=<span class="string">&quot;getMatchInfo()&quot;</span> <span class="comment">#聚焦时执行 (blur)=&quot;getMatchInfo()&quot; 失焦时执行</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#组件内引入内容</span></span><br><span class="line">&lt;ng-content <span class="keyword">select</span>=<span class="string">&quot;[ion-fixed],ion-fab&quot;</span>&gt;&lt;/ng-content&gt;</span><br><span class="line"><span class="comment">#空占位符</span></span><br><span class="line">&lt;ng-container&gt;&lt;/ng-container&gt;</span><br><span class="line"><span class="comment">#模板语法,封装指令,[IF]等</span></span><br><span class="line">&lt;ng-template&gt;&lt;/ng-template&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Angular常用TS"><a href="#Angular常用TS" class="headerlink" title="Angular常用TS"></a>Angular常用TS</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#import &#123;Input&#125; from &#x27;@angular/core&#x27;;</span></span><br><span class="line">@Input() hero: Hero;            <span class="comment">#父子组件通信方式，数据双向绑定,可放set方法上  @Input() set name(name: string)&#123;&#125;</span></span><br><span class="line">@Output(<span class="string">&#x27;myClick&#x27;</span>) clicks       <span class="comment">#绑定通知事件，并起别名‘myClick’</span></span><br><span class="line">@ViewChild(ChildenComponent) child: ChildenComponent;   <span class="comment">#子组件实例引用</span></span><br><span class="line">@ViewChild(<span class="string">&quot;child&quot;</span>) child2;     <span class="comment">#字符串,指向含有‘#child’的元素</span></span><br><span class="line">@ViewChild(<span class="string">&#x27;childB&#x27;</span>, &#123;<span class="built_in">read</span>: ElementRef&#125;)    <span class="comment">#匹配元素,html元素</span></span><br><span class="line">@ViewChild(<span class="string">&#x27;childB&#x27;</span>, &#123;<span class="built_in">read</span>: ViewContainerRef&#125;)  <span class="comment">#匹配元素,匹配视图容器</span></span><br><span class="line">@ViewChild(<span class="string">&quot;refresher&quot;</span>) divTop: ElementRef;     <span class="comment">#获取html元素</span></span><br><span class="line">&lt;input <span class="comment">#phone placeholder=&quot;phone number&quot;&gt;       #模板引用变量,(click)=&quot;callPhone(phone.value)&quot; === ref-phone</span></span><br><span class="line"><span class="comment">#heroForm=&quot;ngForm&quot; --&gt; &lt;button type=&quot;submit&quot; [disabled]=&quot;!heroForm.form.valid&quot;&gt;Submit&lt;/button&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#滚动到指定锚点</span></span><br><span class="line">@ViewChild(<span class="string">&quot;top&quot;</span>,&#123;<span class="built_in">read</span>: ElementRef&#125;) ticketEle;</span><br><span class="line">this.top &amp;&amp; this.top.nativeElement.scrollIntoView (<span class="literal">true</span>);</span><br><span class="line"><span class="comment">#滚动到选中的tab</span></span><br><span class="line"><span class="function"><span class="title">scrollToSelect</span></span>() &#123;</span><br><span class="line">    <span class="built_in">let</span> selected = this.ticketEle.nativeElement.querySelector(<span class="string">&quot;.select&quot;</span>);</span><br><span class="line">    <span class="keyword">if</span>(selected) &#123;</span><br><span class="line">      <span class="built_in">let</span> ofTop = selected.offsetTop;</span><br><span class="line">      this.scroll.nativeElement.scrollTo(0,ofTop);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#克隆页面元素</span></span><br><span class="line">elementRef.nativeElement.cloneNode(<span class="literal">true</span>)</span><br><span class="line"><span class="comment">#移除元素</span></span><br><span class="line">element.parentNode &amp;&amp; element.parentNode.removeChild(element);</span><br><span class="line"></span><br><span class="line"><span class="comment">#允许自定义元素，icon-content等icon-header</span></span><br><span class="line">@NgModule(&#123; schemas: [CUSTOM_ELEMENTS_SCHEMA] &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">#事件监听一</span></span><br><span class="line">import &#123;Observable&#125; from <span class="string">&quot;rxjs&quot;</span>;</span><br><span class="line">Observable.fromEvent(this.ele.nativeElement, <span class="string">&#x27;scroll&#x27;</span>).subscribe((event) =&gt; &#123;</span><br><span class="line">  console.log(&#x27;scroll&#x27;,<span class="number">32</span>);</span><br><span class="line">&#125;);</span><br><span class="line">#事件监听二</span><br><span class="line">import &#123;Renderer2&#125; from &quot;@angular/core&quot;;</span><br><span class="line">this.renderer.listen(this.ele.nativeElement, &#x27;click&#x27;, () =&gt; &#123;</span><br><span class="line">  console.log(&#x27;click&#x27;,<span class="number">27</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//js阻止事件冒泡</span><br><span class="line">oEvent.cancelBubble = true;</span><br><span class="line">oEvent.stopPropagation();</span><br><span class="line"></span><br><span class="line">//js阻止链接默认行为，没有停止冒泡</span><br><span class="line">oEvent.preventDefault(); </span><br><span class="line"></span><br><span class="line">#检测数据变化</span><br><span class="line">import &#123;ChangeDetectorRef&#125; from &#x27;@angular/core&#x27;;</span><br><span class="line">public cdf: ChangeDetectorRef</span><br><span class="line">this.cdf.detectChanges();</span><br><span class="line"></span><br><span class="line">#angular6补充</span><br><span class="line">ng g pipe service/date --module ../router/bootstrap #以服务所在目录为根目录确定模块</span><br><span class="line">ng g service service/http       #新建服务，可用模块名替代root</span><br></pre></td></tr></table></figure>
+
+<h2 id="ES6常用语法"><a href="#ES6常用语法" class="headerlink" title="ES6常用语法"></a>ES6常用语法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">heroes =&gt; this.heroes = heroes  <span class="comment">#只有一个返回语句的函数</span></span><br><span class="line">&#123; name &#125; as Hero                <span class="comment">#把Name的值赋给Hero对象的Name属性</span></span><br><span class="line">&#123;bbc&#125;                           <span class="comment">#把bbc变量变成键值对bbc-value对象	</span></span><br><span class="line">arrs.find(item =&gt; item === 1)   <span class="comment">#数组查找指定条件的值</span></span><br><span class="line">heroes.filter(h =&gt; h !== hero)  <span class="comment">#过滤数组，true时过滤掉,类似删除</span></span><br><span class="line">oldArray.map(entry =&gt; &#123;<span class="string">&#x27;abc:&#x27;</span> + entry;&#125;)    <span class="comment">#生成新的数组，可把数组转对象等</span></span><br><span class="line">/**</span><br><span class="line"> * 排序，<span class="literal">false</span>:倒序,默认从大到小</span><br><span class="line"> * @param &#123;string&#125; prop,&#123;boolean&#125; sc asc/desc</span><br><span class="line"> * @returns &#123;any&#125;</span><br><span class="line"> * this.sortArray(<span class="string">&#x27;d30WinRatio&#x27;</span>,<span class="literal">false</span>);</span><br><span class="line"> */</span><br><span class="line">sortArray(prop: string,sc:boolean=<span class="literal">true</span>) &#123;</span><br><span class="line">    const sorted = this.list.sort((a, b) =&gt; a[prop] &gt; b[prop] ? <span class="number">1</span> : a[prop] === b[prop] ? <span class="number">0</span> : -<span class="number">1</span>);</span><br><span class="line">    if(!sc) sorted.reverse();</span><br><span class="line">    return sorted;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#对象转数组--&#123;a:<span class="number">1</span>,b:<span class="number">2</span>,c:<span class="number">3</span>&#125;---&gt;[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">let arr = Object.keys(this.typeData).map(key=&gt; this.typeData[key]);</span><br><span class="line"></span><br><span class="line">#对象拷贝增量赋值</span><br><span class="line">class C&#123;</span><br><span class="line">    a;</span><br><span class="line">    b;</span><br><span class="line">    getA()&#123;return this.a&#125;</span><br><span class="line">    getB()&#123;return this.b&#125;</span><br><span class="line">&#125;</span><br><span class="line">let tmp = new C();</span><br><span class="line">let obj = &#123;a:<span class="number">6</span>,b:<span class="number">7</span>&#125;;</span><br><span class="line">var res = Object.assign(tmp,obj,&#123;c:<span class="number">8</span>&#125;);//&#123;a:<span class="number">6</span>,b:<span class="number">7</span>,c:<span class="number">8</span>&#125;; res === tmp;</span><br></pre></td></tr></table></figure>
+
+<h2 id="打包和优化"><a href="#打包和优化" class="headerlink" title="打包和优化"></a>打包和优化</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ng build --prod --bh ./         <span class="comment">#指定base href的值编译</span></span><br><span class="line">ng build –prod –aot             <span class="comment">#不压缩编译，生成map文件</span></span><br><span class="line">ng build --prod --stats-json    <span class="comment">#输出包体组成分析文件，生成 stats.json</span></span><br><span class="line">ng build --prod --build-optimizer   <span class="comment">#配合 UglifyJs 能够智能的移除未使用代码</span></span><br><span class="line">ng eject                        <span class="comment">#导出Webpack配置,.angular-cli.json添加&quot;ejected&quot;: true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Angular的Rest风格部署"><a href="#Angular的Rest风格部署" class="headerlink" title="Angular的Rest风格部署"></a>Angular的Rest风格部署</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#静态网站，配置Nginx</span></span><br><span class="line">location / &#123;</span><br><span class="line">    root   html/dist;</span><br><span class="line">    try_files <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.html =404; <span class="comment">#主要是这句</span></span><br><span class="line">    index  index.html index.htm;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#动态网站</span></span><br><span class="line">app.use(<span class="keyword">function</span> (req, res) &#123;</span><br><span class="line">    console.log(req.path);</span><br><span class="line">    <span class="keyword">if</span>(req.path.indexOf(<span class="string">&#x27;/api&#x27;</span>)&gt;=0)&#123;</span><br><span class="line">        res.send(<span class="string">&quot;server text&quot;</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123; //angular启动页</span><br><span class="line">        res.sendfile(<span class="string">&#x27;app/index.html&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="常用开发技巧"><a href="#常用开发技巧" class="headerlink" title="常用开发技巧"></a>常用开发技巧</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#命令行扩展工具</span></span><br><span class="line">npm install angular-cli-tools -g    <span class="comment">#命令行扩展工具</span></span><br><span class="line">ngt g class [class-name]            <span class="comment">#创建类</span></span><br><span class="line">ngt g c [component-name]            <span class="comment">#创建组建</span></span><br><span class="line">ngt g d [directive-name]            <span class="comment">#创建指令</span></span><br><span class="line">ngt g e [enum-name]                 <span class="comment">#创建枚举</span></span><br><span class="line">ngt g h [name]                      <span class="comment">#创建html</span></span><br><span class="line">ngt g index                         <span class="comment">#创建索引		</span></span><br><span class="line">ngt g i [interface-name]            <span class="comment">#创建接口</span></span><br><span class="line">ngt g m [module-name]               <span class="comment">#创建模块</span></span><br><span class="line">ngt g p [pipe-name]                 <span class="comment">#创建管道</span></span><br><span class="line">ngt g r [route-name]                <span class="comment">#创建动态路由</span></span><br><span class="line">ngt g routing [routing-name]        <span class="comment">#创建静态路由</span></span><br><span class="line">ngt g s [service-name]e]            <span class="comment">#创建服务</span></span><br><span class="line">ngt g style [style-name]            <span class="comment">#创建样式</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#添加延迟加载路由</span></span><br><span class="line">import &#123; NgModule &#125;  from <span class="string">&#x27;@angular/core&#x27;</span>;</span><br><span class="line">import &#123; Routes, RouterModule &#125; from <span class="string">&#x27;@angular/router&#x27;</span>;</span><br><span class="line">import &#123; ActivityComponent &#125; from <span class="string">&#x27;./activity.component&#x27;</span>;</span><br><span class="line">const routes: Routes = [</span><br><span class="line">  &#123; path: <span class="string">&#x27;&#x27;</span>, component: ActivityComponent &#125;,</span><br><span class="line">];</span><br><span class="line">@NgModule(&#123;</span><br><span class="line">  imports: [ RouterModule.forChild(routes)],</span><br><span class="line">  exports: [ RouterModule ]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">export</span> class ActivityRouting&#123;&#125;;</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">&#123;path: <span class="string">&#x27;activity&#x27;</span>, loadChildren: <span class="string">&#x27;./activity/activity.module#ActivityModule&#x27;</span>&#125;,</span><br><span class="line">*/</span><br><span class="line"></span><br><span class="line"><span class="comment">#常用示列</span></span><br><span class="line">ngt update index --recursive    <span class="comment">#更新当前目录和子目录的index索引</span></span><br><span class="line"><span class="comment">#模版文件安装配置</span></span><br><span class="line">ngt install config              <span class="comment">#在项目跟路径创建配置文件</span></span><br><span class="line">ngt s ./login-form.module.ts -t:form-module <span class="comment">#使用指定文件创建form模版</span></span><br><span class="line">ngt g m <span class="built_in">test</span> -t:form-module     <span class="comment">#使用刚刚创建的模版去创建test模块</span></span><br><span class="line"><span class="comment">#ng更新后的命令，可以在当前目录创建对应的模块</span></span><br><span class="line">ng update @angular/cli</span><br><span class="line">ng g c --inline-template=<span class="literal">true</span> --inline-style=<span class="literal">true</span> tab   <span class="comment">#创建内联tab模块</span></span><br><span class="line">ng g c tab -its 		<span class="comment">#上面命令简写</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#路由参数获取</span></span><br><span class="line"><span class="comment">#route:ActivatedRoute 获取路由参数</span></span><br><span class="line">route.snapshot.params[<span class="string">&#x27;roomStatus&#x27;</span>]</span><br><span class="line">route.queryParams[<span class="string">&#x27;roomStatus&#x27;</span>]</span><br><span class="line">this.router.navigate([<span class="string">&#x27;/activity/puzzles/ranking&#x27;</span>, &#123;uid: 123, tid: res.model.id&#125;])</span><br><span class="line">routerLink=<span class="string">&quot;/activity/puzzles&quot;</span></span><br><span class="line">this.router.navigate([<span class="string">&#x27;/login&#x27;</span>],&#123; skipLocationChange: <span class="literal">true</span> &#125;);	<span class="comment">#防止重复跳登陆页面，url不变</span></span><br><span class="line">this.router.navigate([<span class="string">&#x27;./ranking&#x27;</span>],&#123;replaceUrl:<span class="literal">true</span>,relativeTo:this.currentRoute&#125;);//Url改变,不添加到历史记录</span><br><span class="line"></span><br><span class="line"><span class="comment">#监听当前页面路由变化，可以监听到历史回退</span></span><br><span class="line">import &#123;debounceTime, filter, map, mergeMap&#125; from <span class="string">&quot;rxjs/operators&quot;</span>;</span><br><span class="line"><span class="comment">#第一次加载不会触发--可放入init里面</span></span><br><span class="line">this.subRouter = this.router.events</span><br><span class="line">  .pipe(filter(event =&gt; event instanceof NavigationEnd),map(() =&gt; this.route))</span><br><span class="line">  .pipe(map(route =&gt; &#123;</span><br><span class="line">    <span class="keyword">while</span> (route.firstChild) route = route.firstChild;</span><br><span class="line">    <span class="built_in">return</span> route;</span><br><span class="line">  &#125;))</span><br><span class="line">  .pipe(filter(route =&gt; route.outlet === <span class="string">&#x27;primary&#x27;</span>))</span><br><span class="line">  .pipe(mergeMap(route =&gt; route.params),debounceTime(300))</span><br><span class="line">  .subscribe((event) =&gt;&#123;</span><br><span class="line">    if(Number(event.uid) &amp;&amp; Number(event.type))&#123;</span><br><span class="line">      this.uid = +event.uid;</span><br><span class="line">      this.type = +event.type;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">#同路由页面替换URL参数，第一个不添加到历史记录，第二个会产生历史记录</span></span><br><span class="line"><span class="keyword">if</span> (!!(window.history &amp;&amp; history.pushState))&#123;</span><br><span class="line">  history.replaceState(&#123;uid: this.uid, <span class="built_in">type</span>: this.type&#125;, <span class="string">&#x27;活动排名页&#x27;</span>, `#/activity/puzzles/ranking;uid=<span class="variable">$&#123;this.uid&#125;</span>;<span class="built_in">type</span>=<span class="variable">$&#123;this.type&#125;</span>`);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">  //this.router.navigate([<span class="string">&#x27;/activity/puzzles/ranking&#x27;</span>, &#123;uid: this.uid, <span class="built_in">type</span>: this.type&#125;]);</span><br><span class="line">  this.router.navigate([<span class="string">&#x27;./ranking&#x27;</span>],&#123;replaceUrl:<span class="literal">true</span>,relativeTo:this.currentRoute&#125;);//不添加到历史记录</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//rxjs防抖动函数</span><br><span class="line">import &#123;Subject&#125; from <span class="string">&quot;rxjs/Subject&quot;</span>;</span><br><span class="line">import &#123;debounceTime, distinctUntilChanged&#125; from <span class="string">&#x27;rxjs/operators&#x27;</span>;</span><br><span class="line">changeStream: Subject&lt;string&gt; = new Subject&lt;string&gt;();</span><br><span class="line">this.order = this.order ||</span><br><span class="line">      this.changeStream</span><br><span class="line">          .pipe(debounceTime(2000))</span><br><span class="line">          .pipe(distinctUntilChanged())</span><br><span class="line">          .subscribe(streetText =&gt; &#123;</span><br><span class="line">              //实际业务处理</span><br><span class="line">              console.log(38);</span><br><span class="line">          &#125;);</span><br><span class="line"><span class="comment">#调用方式</span></span><br><span class="line">this.changeStream.next(this.list);</span><br></pre></td></tr></table></figure>
+
+<h2 id="常用指令写法"><a href="#常用指令写法" class="headerlink" title="常用指令写法"></a>常用指令写法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#时间格式化</span></span><br><span class="line">import &#123; DatePipe &#125; from <span class="string">&#x27;@angular/common&#x27;</span>;</span><br><span class="line">private datePipe: DatePipe</span><br><span class="line">this.datePipe.transform(this.ticketInfo.flyTime, <span class="string">&#x27;yyyy-MM-dd HH:mm&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#ng-container：特别对for循环和if同时使用时，特别有效</span></span><br><span class="line">既不是一个Component，也不是一个Directive，只是单纯的一个特殊tag。ng-container可以直接包裹任何元素，包括文本，但本身不会生成元素标签，也不会影响页面样式和布局。包裹的内容，如果不通过其他指令控制，会直接渲染到页面中</span><br><span class="line"></span><br><span class="line">https://map.baidu.com/?qt=cur&amp;wd=%E6%B7%B1%E5%9C%B3%E5%B8%82  //天气预报接口</span><br><span class="line">https://map.baidu.com/mobile/?qt=loc&amp;x=113.9278992&amp;y=22.543741&amp;pois=1 //地理信息接口</span><br></pre></td></tr></table></figure>
+<h2 id="IphoneX的样式兼容"><a href="#IphoneX的样式兼容" class="headerlink" title="IphoneX的样式兼容"></a>IphoneX的样式兼容</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br></pre></td><td class="code"><pre><span class="line">@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) &#123;</span><br><span class="line">    	.iphoneTop .indexTop,</span><br><span class="line">	    .iphoneTop .liveTop,</span><br><span class="line">	    .iphoneTop .navBar&#123; padding-top: 44px;&#125;</span><br><span class="line">	    .betBottomBar,.messageFixed&#123; bottom: 34px;&#125;</span><br><span class="line">	    .iphoneTop .fixed_top_bar .title&#123; margin-top: 44px;&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#背景图平铺</span></span><br><span class="line">.content-bg&#123;background: url(../images/bg_repeat.jpg) repeat-y;background-size: 100% auto;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#浏览器自带滚动条隐藏</span></span><br><span class="line">html::-webkit-scrollBar&#123;display:none;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#解决输入框自动补全，黄色背景</span></span><br><span class="line">input:-webkit-autofill,</span><br><span class="line">input:-webkit-autofill:hover,</span><br><span class="line">input:-webkit-autofill:focus,</span><br><span class="line">input:-webkit-autofill:active &#123;</span><br><span class="line">    -webkit-box-shadow: 0 0 0px 1000px <span class="comment">#333 inset;</span></span><br><span class="line">    transition: background-color 50000s ease-in-out 0s, color 5000s ease-in-out 0s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#这种可以解决回退后，显示黄色的背景，完美解决</span></span><br><span class="line">input:-webkit-autofill &#123;</span><br><span class="line">   -webkit-animation: autofill-fix 1s infinite;</span><br><span class="line">&#125;</span><br><span class="line">@-webkit-keyframes autofill-fix &#123;</span><br><span class="line">    from &#123;</span><br><span class="line">        background-color: transparent</span><br><span class="line">    &#125;</span><br><span class="line">    to &#123;</span><br><span class="line">        background-color: transparent</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#加上spinner类能让p和div等块旋转</span></span><br><span class="line">.spinner&#123;</span><br><span class="line">    -webkit-animation: spin 1s linear 1s 5 alternate;</span><br><span class="line">    animation: spin 1s linear infinite;</span><br><span class="line">    display: inline-block;</span><br><span class="line">&#125;</span><br><span class="line">@-webkit-keyframes spin &#123;</span><br><span class="line">    from &#123;</span><br><span class="line">        -webkit-transform: rotate(0deg);</span><br><span class="line">    &#125;</span><br><span class="line">    to &#123;</span><br><span class="line">        -webkit-transform: rotate(360deg);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@keyframes spin &#123;</span><br><span class="line">    from &#123;</span><br><span class="line">        transform: rotate(0deg);</span><br><span class="line">    &#125;</span><br><span class="line">    to &#123;</span><br><span class="line">        transform: rotate(360deg);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#rem单位初始化--Ts</span></span><br><span class="line"><span class="built_in">declare</span> var window:any;</span><br><span class="line"><span class="function"><span class="title">initWinPage</span></span>()&#123;</span><br><span class="line">    this.restWinPage(window, window.lib || (window.lib = &#123;&#125;));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">private restWinPage(N, M) &#123;</span><br><span class="line">    <span class="keyword">function</span> <span class="function"><span class="title">L</span></span>() &#123;</span><br><span class="line">        <span class="built_in">let</span> a = I.getBoundingClientRect().width;</span><br><span class="line">        a / F &gt; 540 &amp;&amp; (a = 540 * F);</span><br><span class="line">        <span class="built_in">let</span> d = a / 7.5;</span><br><span class="line">        I.style.fontSize = d + <span class="string">&quot;px&quot;</span>, D.rem = N.rem = d</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">let</span> K, J = N.document, I = J.documentElement, H = J.querySelector(<span class="string">&#x27;meta[name=&quot;viewport&quot;]&#x27;</span>),</span><br><span class="line">        G = J.querySelector(<span class="string">&#x27;meta[name=&quot;flexible&quot;]&#x27;</span>), F = 0, E = 0, D = M.flexible || (M.flexible = &#123;&#125;);</span><br><span class="line">    <span class="keyword">if</span> (H) &#123;</span><br><span class="line">        // console.warn(<span class="string">&quot;将根据已有的meta标签来设置缩放比例&quot;</span>);</span><br><span class="line">        <span class="built_in">let</span> C = H.getAttribute(<span class="string">&quot;content&quot;</span>).match(/initial\-scale=([\d\.]+)/);</span><br><span class="line">        C &amp;&amp; (E = parseFloat(C[1]), F = parseInt(<span class="string">&#x27;&#x27;</span>+1 / E))</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (G) &#123;</span><br><span class="line">            <span class="built_in">let</span> B = G.getAttribute(<span class="string">&quot;content&quot;</span>);</span><br><span class="line">            <span class="keyword">if</span> (B) &#123;</span><br><span class="line">                <span class="built_in">let</span> A = B.match(/initial\-dpr=([\d\.]+)/), z = B.match(/maximum\-dpr=([\d\.]+)/);</span><br><span class="line">                A &amp;&amp; (F = parseFloat(A[1]), E = parseFloat((<span class="number">1</span> / F).toFixed(<span class="number">2</span>))), z &amp;&amp; (F = parseFloat(z[1]), E = parseFloat((<span class="number">1</span> / F).toFixed(<span class="number">2</span>)))</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!F &amp;&amp; !E) &#123;</span><br><span class="line">        <span class="built_in">let</span> y = N.navigator.userAgent, x = (!!y.match(/android/gi) &amp;&amp; !!y.match(/iphone/gi)),</span><br><span class="line">            w = x &amp;&amp; !!y.match(/OS 9_3/), v = N.devicePixelRatio;</span><br><span class="line">        F = x ? v &gt;= 3 &amp;&amp; (!F || F &gt;= 3) ? 3 : v &gt;= 2 &amp;&amp; (!F || F &gt;= 2) ? 2 : 1 : 1, E = 1 / F</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (I.setAttribute(<span class="string">&quot;data-dpr&quot;</span>, F), !H) &#123;</span><br><span class="line">        <span class="keyword">if</span> (H = J.createElement(<span class="string">&quot;meta&quot;</span>), H.setAttribute(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;viewport&quot;</span>), H.setAttribute(<span class="string">&quot;content&quot;</span>, <span class="string">&quot;initial-scale=&quot;</span> + E + <span class="string">&quot;, maximum-scale=&quot;</span> + E + <span class="string">&quot;, minimum-scale=&quot;</span> + E + <span class="string">&quot;, user-scalable=no&quot;</span>), I.firstElementChild) &#123;</span><br><span class="line">            I.firstElementChild.appendChild(H)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="built_in">let</span> u = J.createElement(<span class="string">&quot;div&quot;</span>);</span><br><span class="line">            u.appendChild(H), J.write(u.innerHTML)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    N.addEventListener(<span class="string">&quot;resize&quot;</span>, <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">        clearTimeout(K), K = setTimeout(L, 300)</span><br><span class="line">    &#125;, !1), N.addEventListener(<span class="string">&quot;pageshow&quot;</span>, <span class="keyword">function</span> (b) &#123;</span><br><span class="line">        b.persisted &amp;&amp; (clearTimeout(K), K = setTimeout(L, 300))</span><br><span class="line">    &#125;, !1), <span class="string">&quot;complete&quot;</span> === J.readyState ? J.body.style.fontSize = 12 * F + <span class="string">&quot;px&quot;</span> : J.addEventListener(<span class="string">&quot;DOMContentLoaded&quot;</span>, <span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">        J.body.style.fontSize = 12 * F + <span class="string">&quot;px&quot;</span></span><br><span class="line">    &#125;, !1), L(), D.dpr = N.dpr = F, D.refreshRem = L, D.rem2px = <span class="keyword">function</span> (d) &#123;</span><br><span class="line">        <span class="built_in">let</span> c:any = parseFloat(d) * this.rem;</span><br><span class="line">        <span class="built_in">return</span> <span class="string">&quot;string&quot;</span> == typeof d &amp;&amp; d.match(/rem$/) &amp;&amp; (c += <span class="string">&quot;px&quot;</span>), c</span><br><span class="line">    &#125;, D.px2rem = <span class="keyword">function</span> (d) &#123;</span><br><span class="line">        <span class="built_in">let</span> c:any = parseFloat(d) / this.rem;</span><br><span class="line">        <span class="built_in">return</span> <span class="string">&quot;string&quot;</span> == typeof d &amp;&amp; d.match(/px$/) &amp;&amp; (c += <span class="string">&quot;rem&quot;</span>), c</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#iframe缩放问题</span></span><br><span class="line">-webkit-transform: scaleY(0.7);//Y轴方向，缩放0.6倍</span><br><span class="line">-webkit-transform-origin: 100% 100%;//缩放在右下角对齐</span><br><span class="line">margin-top: -50px;//负值margin从而把其位置摆正确，有时需要放到包在div的外面</span><br><span class="line">margin-left: -95px;//如果用scale全部缩放，需要设置这个值</span><br><span class="line"><span class="comment">#缩放示例</span></span><br><span class="line">[style.marginTop.px]=<span class="string">&quot;cartoonHeight*0.2*-1&quot;</span></span><br><span class="line">[style.marginLeft.px]=<span class="string">&quot;cartoonWidth*0.2*-1&quot;</span></span><br><span class="line">style=<span class="string">&quot;transform: scale(0.8);-webkit-transform: scale(0.8);-webkit-transform-origin: 100% 100%;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="SASS常用技巧"><a href="#SASS常用技巧" class="headerlink" title="SASS常用技巧"></a>SASS常用技巧</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node-sass scss/app.scss css/app.css --output-style compressed	<span class="comment">#编译并压缩代码，-w监听</span></span><br><span class="line">node-sass -w -r scss -o css --output-style compressed 			<span class="comment">#监听scss目录，编译到css目录</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="cookie相关设置"><a href="#cookie相关设置" class="headerlink" title="cookie相关设置"></a>cookie相关设置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#获取根域名，以便设置到根域名上，如 .baidu.com .google.com</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">GetCookieDomain</span></span>() &#123;</span><br><span class="line">    var host = location.hostname;</span><br><span class="line">    var ip = /^(\d&#123;1,2&#125;|1\d\d|2[0-4]\d|25[0-5])\.(\d&#123;1,2&#125;|1\d\d|2[0-4]\d|25[0-5])\.(\d&#123;1,2&#125;|1\d\d|2[0-4]\d|25[0-5])\.(\d&#123;1,2&#125;|1\d\d|2[0-4]\d|25[0-5])$/;</span><br><span class="line">    <span class="keyword">if</span> (ip.test(host) === <span class="literal">true</span> || host === <span class="string">&#x27;localhost&#x27;</span>) <span class="built_in">return</span> host;</span><br><span class="line">    var regex = /([^]*).*/;</span><br><span class="line">    var match = host.match(regex);</span><br><span class="line">    <span class="keyword">if</span> (typeof match !== <span class="string">&quot;undefined&quot;</span> &amp;&amp; null !== match) host = match[1];</span><br><span class="line">    <span class="keyword">if</span> (typeof host !== <span class="string">&quot;undefined&quot;</span> &amp;&amp; null !== host) &#123;</span><br><span class="line">        var strAry = host.split(<span class="string">&quot;.&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span> (strAry.length &gt; 1) &#123;</span><br><span class="line">            host = strAry[strAry.length - 2] + <span class="string">&quot;.&quot;</span> + strAry[strAry.length - 1];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> <span class="string">&#x27;.&#x27;</span> + host;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">#设置cookie</span></span><br><span class="line">document.cookie = cname + <span class="string">&quot;=&quot;</span> + cvalue + <span class="string">&quot;; expires=&quot;</span> + expires + <span class="string">&quot;; domain=&quot;</span> + GetCookieDomain() + <span class="string">&quot;; path=/&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#过期，当前时间减去一秒，立即过期</span></span><br><span class="line">expires = (new Date().getTime() - 1000);</span><br><span class="line">document.cookie = <span class="string">&quot;agentId&quot;</span> + <span class="string">&quot;=&quot;</span> + <span class="string">&quot;123&quot;</span> + <span class="string">&quot;; expires=&quot;</span> + (new Date().getTime() - 1000) + <span class="string">&quot;; domain=&quot;</span> + GetCookieDomain() + <span class="string">&quot;; path=/&quot;</span>;</span><br></pre></td></tr></table></figure>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://github.com/XtRqHelper/portal" rel="external nofollow noreferrer">didton</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info break">
+                    <a class="" href="https://github.com/XtRqHelper/portal/2019/05/23/17622004249/">https://github.com/XtRqHelper/portal/2019/05/23/17622004249/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://github.com/XtRqHelper/portal" target="_blank">didton</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      /*document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });*/
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/angular/">
+                                    <span class="chip bg-color">angular</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="qzone,wechat,weibo,douban,qq" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2023/01/29/16749649732/" target="_blank">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Test 日常怎样使用GIT">
+                        
+                        <span class="card-title">Test 日常怎样使用GIT</span>
+                    </div>
+                </a>
+
+
+                <div class="card-content article-content">
+                    <a class="a_txt" href="/2023/01/29/16749649732/" target="_blank">
+                        <div class="summary block-with-text">
+                            
+                                同分支开发个人项目，小项目，基于这种方式使用GIT，也是初入编码时，使用的最对的方式。
+切换合并法基于特定分支切换出新分支，开发好功能，再合并到特定分支去；这种方法，特别适合那种很多人同时开发的大型项目，一个功能一个新的分支，也是在工作中用
+                            
+                        </div>
+                    </a>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-29
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                                    编程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/GIT/">
+                        <span class="chip bg-color">GIT</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/05/23/17622004249/"  target="_blank">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Angular使用">
+                        
+                        <span class="card-title">Angular使用</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <a class="a_txt" href="/2019/05/23/17622004249/" target="_blank">
+                        <div class="summary block-with-text">
+                            
+                                初始化环境12345678910111213npm install -g @angular/cli     #安装全局命令行ng new ngapp                    #生成一个新项目ng serve --open   
+                            
+                        </div>
+                    </a>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-05-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%BC%96%E7%A8%8B/" class="post-category">
+                                    编程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/angular/">
+                        <span class="chip bg-color">angular</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.staticfile.org/tocbot/4.10.1/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        $tocAside.removeClass(expandedClass).hide();
+        
+    });
+</script>
+
+    
+
+</main>
+
+<script src="/js/auto/f.min.js"></script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+    
+    <div class="container row center-align" style="margin-bottom: 10px !important;">
+        <div class="col s12 m8 l8 copy-right m12 l12">
+            
+                 <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+                    <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备19063853号</a>
+                </span>
+            
+            &nbsp;&copy;
+            <span id="year">2019 – <span id="f_time">2025</span></span>
+            <a href="https://github.com/XtRqHelper/portal" target="_blank">didton</a>
+            |&nbsp;Powered by&nbsp;<a href="https://gitee.com/doobo/hexo-web" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="#" target="_blank">Matery</a>
+            
+            
+            
+            
+            
+            
+            <br>
+            <div class="footer-custom">
+                
+                <div style="width:300px;margin:0 auto;padding:5px 0;">
+                    <a target="_blank" href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44030602003658"
+                       style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
+                        <img src="/images/beian.png" style="float:left;">
+                        <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#ffffff;">粤公网安备 44030602003658号</p>
+                    </a>
+                </div>
+                
+            </div>
+            
+            <div style="display: none">
+                <script type="text/javascript">
+                    document.write("<script type=\"text\/javascript\" src=\"https://s4.cnzz.com/z_stat.php?id=1278650874&web_id=1278650874\"><\/script>");
+                </script>
+            </div>
+            
+        </div>
+        
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+<script>
+    setTimeout(function () {
+        var year = new Date().getFullYear();
+        $("#f_time").text(year)
+    },100)
+</script>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.json", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    <div class="wxmin">
+        <img src="/images/wxmin.jpg" />
+    </div>
+</div>
+
+
+    <script src="https://cdn.staticfile.org/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.staticfile.org/masonry/4.0.0/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="https://cdn.staticfile.org/scrollprogress/3.0.2/scrollProgress.min.js"></script>
+    <script src="https://cdn.staticfile.org/lightgallery/1.6.11/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <script src="https://cdn.staticfile.org/instant.page/3.0.0/instantpage.min.js" type="module"></script>
+    
+
+</body>
+
+</html>
